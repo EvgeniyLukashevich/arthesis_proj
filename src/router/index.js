@@ -1,19 +1,57 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomePage from '@/components/pages/HomePage.vue'
+import GalleryPage from '@/components/pages/GalleryPage.vue'
+import EventsPage from '@/components/pages/EventsPage.vue'
+import AuthPage from '@/components/pages/AuthPage.vue'
+import UserAlbumsPage from '@/components/pages/UserAlbumsPage.vue'
+import AlbumPage from '@/components/pages/AlbumPage.vue'
+import EventPage from '@/components/pages/EventPage.vue'
+import StudioPage from '@/components/pages/StudioPage.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
-    component: HomeView
+    component: HomePage
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/',
+    redirect: 'home'
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: AuthPage
+  },
+  {
+    path: '/studio',
+    name: 'studio',
+    component: StudioPage
+  },
+  {
+    path: '/gallery',
+    name: 'gallery',
+    component: GalleryPage
+  },
+  {
+    path: '/events',
+    name: 'events',
+    component: EventsPage
+  },
+  {
+    path: '/event/:id',
+    name: 'event',
+    component: EventPage
+  },
+  {
+    path: '/user/:id',
+    name: 'user',
+    component: UserAlbumsPage
+  },
+  {
+    path: '/album/:id',
+    name: 'album',
+    component: AlbumPage
   }
 ]
 
